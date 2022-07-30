@@ -610,3 +610,24 @@
           Liskov Substitution Principle	Objects of a superclass should be replaceable with objects of its subclasses without breaking the system.
           Interface Segregation Principle	No client should be forced to depend on methods that it does not use.
           Dependency Inversion Principle	High-level modules should not depend on low-level modules, both should depend on abstractions.
+          
+#38 Immutable List
+  
+          Using Java 9 Factory Of() method
+          In Java, use of() with Set, Map or List to create an Immutable List.
+          
+          ImmutableList<String> iList = ImmutableList.<String>builder()
+                                          .add("Geeks", "For", "Geeks")
+                                          .build();
+          ImmutableList<T> immutableList =
+                          ImmutableList.copyOf(list);
+           ImmutableList<String> immutableList = 
+               ImmutableList.of("Geeks", "For", "Geeks");
+               
+           trying to modify will  throw UnsupportedOperationException.
+               
+**How is it different from Collections.unmodifiableList()?**
+
+              Collections.unmodifiableList creates a wrapper around the same existing List such that the wrapper cannot be used to modify it. However we can still change original List.
+           List<String> iList = Collections.unmodifiableList(list);               
+                                          
